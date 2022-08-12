@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Animation - Webiyor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="section full-height over-hide">
+        <div class="switch-wrap">
+            <h1>Welcome to Webiyor</h1>
+        </div>
+    </div>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor2" id="cursor2"></div>
+    <div class="cursor3" id="cursor3"></div>
+
+    <script>
+        $(document).ready(function () {
+            document.getElementsByTagName("body")[0].addEventListener("mousemove", function (n) {
+                t.style.left = n.clientX + "px",
+                    t.style.top = n.clientY + "px",
+                    e.style.left = n.clientX + "px",
+                    e.style.top = n.clientY + "px",
+                    i.style.left = n.clientX + "px",
+                    i.style.top = n.clientY + "px"
+
+            });
+            var t = document.getElementById("cursor"),
+                e = document.getElementById("cursor2"),
+                i = document.getElementById("curso3");
+
+            function n(t) {
+                e.classList.add("hover"), i.classList.add("hover")
+            }
+
+            function s(t) {
+                e.classList.remove("hover"), i.classList.remove("hover")
+            }
+            s();
+
+            for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
+                o(r[a])
+            }
+            function o(t) {
+                t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+            }
+
+        });
+    </script>
+</body>
+
+</html>
